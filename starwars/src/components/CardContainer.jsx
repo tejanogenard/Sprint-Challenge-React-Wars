@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import CharacterCard from './CharacterCard'
-import { Row, Container} from 'reactstrap'
+import { Container} from 'reactstrap'
 
 const CardContainer = () => {
     const[data, setData] = useState([])
@@ -11,7 +11,7 @@ const CardContainer = () => {
         .then(Response => 
             setData(Response.data.results));
                 console.log(Response)
-    }, []);
+    }, [data]);
     return(
         <Container>
        {data.map((char, index) => (

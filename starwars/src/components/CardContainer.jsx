@@ -7,13 +7,9 @@ const CardContainer = () => {
     useEffect(() => {
         axios
         .get(`https://swapi.co/api/people/`)
-        .then(Response => {
-            setData(Response);
-            console.log(Response);
-          })
-        .catch(error => {
-            console.log("Data lost", error);
-        });
+        .then(Response => 
+            setData(Response.data.results));
+                console.log(Response)
     }, []);
     return(
         <div>

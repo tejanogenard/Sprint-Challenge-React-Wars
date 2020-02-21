@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import CharacterCard from './CharacterCard'
+import { Row, Container} from 'reactstrap'
 
 const CardContainer = () => {
     const[data, setData] = useState([])
@@ -12,13 +13,15 @@ const CardContainer = () => {
                 console.log(Response)
     }, []);
     return(
-        <div>
+        <Container>
        {data.map((char, index) => (
             <CharacterCard
             name = {char.name} 
+            birth_year = {char.birth_year}
+            gender = {char.gender}
             />
             ))}
-        </div>
+        </Container>
     );
 };
 
